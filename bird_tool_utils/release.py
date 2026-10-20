@@ -107,7 +107,9 @@ def confirm_changelog(version: str, path: Path) -> None:
         ).strip().lower()
         if answer in {"y", "yes"}:
             return
-        if answer in {"n", "no"}:
+        elif answer in {"n", "no"}:
+            die(f"update {path} first, then rerun this script")
+
             die(f"update {path} first, then rerun this script")
 
 
